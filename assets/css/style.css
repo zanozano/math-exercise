@@ -1,0 +1,35 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.img {
+    width: 100%;
+}
+
+.title-module {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.containerRadious {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, .15);
+    height: auto;
+}
+
+.titleResult {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.containerResult {
+    max-height: 100% !important;
+}
+
+.numberResult {
+    color: red;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 0;
+}

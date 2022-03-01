@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--GOOGLE FONT - OPEN SANS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!--CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <title>JavaScript Desafio 1</title>
+
+</head>
+
+<body>
+    <main class="container-fluid p-5">
+        <!-- Ejecicio 1 -->
+        <div class="container mb-5 pb-5">
+            <h1 class="my-4 text-center title-module">Diagrama de flujo</h1>
+            <hr>
+            <div class="col">
+                <img class="img" src="./assets/img/diagrama.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- Ejecicio 2 -->
+        <div class="container mb-5 pb-5">
+            <h1 class="my-4 text-center title-module">Operación con dos numeros</h1>
+            <hr>
+            <div class="row d-flex justify-content-around">
+                <div class="col-6 containerRadious p-4 px-5">
+                    <form action="form-group">
+                        <div class="form-group">
+                            <!-- Input -->
+                            <label for="InputOperation">Ingresa un primer valor</label>
+                            <input type="number" class="form-control mb-4" id="valueInputValue1"
+                                aria-describedby="value1" placeholder="Ingresa primer valor">
+                            <!-- Input -->
+                            <label for="InputOperation">Ingresa un segundo valor</label>
+                            <input type="number" class="form-control" id="valueInputValue2" aria-describedby="value2"
+                                placeholder="Ingresa primer valor">
+                        </div>
+                        <button onclick="calculationSystem(1)" type="button" class="btn btn-primary">Sumar</button>
+                        <button onclick="calculationSystem(2)" type="button" class="btn btn-primary">Restar</button>
+                        <button onclick="calculationSystem(3)" type="button"
+                            class="btn btn-primary">Multiplicar</button>
+                        <button onclick="calculationSystem(4)" type="button" class="btn btn-primary">Dividir</button>
+                        <button onclick="calculationSystem(5)" type="button" class="btn btn-primary">Modulo</button>
+                    </form>
+                </div>
+                <div class="col-4 containerRadious text-center p-4 px-5">
+                    <h5 id="typeOperation" class="m-0 titleResult"></h5>
+                    <hr class="my-3">
+                    <div class="containerResult p-4">
+                        <p class="numberResult" id="operationResult"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejecicio 3 -->
+        <div class="container mb-5 pb-5">
+            <h1 class="my-4 text-center title-module">Convertidor de temperatura</h1>
+            <hr>
+            <div class="row d-flex justify-content-around">
+                <div class="col-6 containerRadious p-4 px-5">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputDegree">Ingresa la temperatura en Celsius</label>
+                            <!-- Input -->
+                            <input type="number" class="form-control" id="valueInput" aria-describedby="valueDegree"
+                                placeholder="Ingresa un valor">
+                        </div>
+                        <button onclick="convertDegree(1)" type="button" class="btn btn-primary">Kelvin</button>
+                        <button onclick="convertDegree(2)" type="button" class="btn btn-secondary">Fahrenheit</button>
+                    </form>
+                </div>
+                <div class="col-4 containerRadious text-center p-4 px-5">
+                    <h5 id="typeDegree" class="m-0 titleResult"></h5>
+                    <hr class="my-3">
+                    <div class="numberResult" id="resultDegree"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejecicio 4 -->
+        <div class="container mb-5 pb-5">
+            <h1 class="my-4 text-center title-module">Convertidor de Días a Semanas, Meses y Años</h1>
+            <hr>
+            <div class="row d-flex justify-content-around">
+                <div class="col-4 containerRadious p-4 px-5">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputDegree">Ingresa los días a calcular</label>
+                            <!-- Input -->
+                            <input type="number" class="form-control" id="valueDays" aria-describedby="valueDays"
+                                placeholder="Ingresa la cantidad de días">
+                        </div>
+                        <button onclick="convertDays()" type="button" class="btn btn-primary">Calcular</button>
+                    </form>
+                </div>
+                <div class="col-6 containerRadious text-center p-4 px-5">
+                    <div class="row">
+                        <h5 id="typeDays" class="m-0 titleResult col-4"></h5>
+                        <h5 id="typeWeeks" class="m-0 titleResult col-4"></h5>
+                        <h5 id="typeYears" class="m-0 titleResult col-4"></h5>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row">
+                        <div class="numberResult col-4" id="resultDays"></div>
+                        <div class="numberResult col-4" id="resultWeeks"></div>
+                        <div class="numberResult col-4" id="resultYears"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejecicio 5 -->
+        <div class="container mb-5 pb-5">
+            <h1 class="my-4 text-center title-module">Suma y Promedio de 5 numeros</h1>
+            <hr>
+            <div class="row d-flex justify-content-around">
+                <div class="col-6 containerRadious p-4 px-5">
+                    <form>
+                        <div class="form-group">
+                            <!-- Input -->
+                            <label for="exampleInputDegree">Ingresa el primer valor</label>
+                            <input type="number" class="form-control mb-3" id="value1-average"
+                                aria-describedby="value1-average" placeholder="Ingresa el primer valor">
+                            <label for="exampleInputDegree">Ingresa el segundo valor</label>
+                            <input type="number" class="form-control mb-3" id="value2-average"
+                                aria-describedby="value2-average" placeholder="Ingresa el segundo valor">
+                            <label for="exampleInputDegree">Ingresa el tercer valor</label>
+                            <input type="number" class="form-control mb-3" id="value3-average"
+                                aria-describedby="value3-average" placeholder="Ingresa el tercero valor">
+                            <label for="exampleInputDegree">Ingresa el cuarto valor</label>
+                            <input type="number" class="form-control mb-3" id="value4-average"
+                                aria-describedby="value4-average" placeholder="Ingresa el cuarto valor">
+                            <label for="exampleInputDegree">Ingresa el quinto valor</label>
+                            <input type="number" class="form-control mb-3" id="value5-average"
+                                aria-describedby="value5-average" placeholder="Ingresa el quinto valor">
+                        </div>
+                        <button onclick="convertAverage()" type="button" class="btn btn-primary">Calcular</button>
+                    </form>
+                </div>
+                <div
+                    class="col-4 containerRadious text-center p-4 px-5 d-flex align-items-center flex-column justify-content-around">
+                    <div>
+                        <h5 id="sumNumber" class="m-0 titleResult"></h5>
+                        <hr class="my-3">
+                        <div class="numberResult" id="sumResult"></div>
+                    </div>
+                    <div>
+                        <h5 id="averageNumber" class="m-0 titleResult"></h5>
+                        <hr class="my-3">
+                        <div class="numberResult" id="averageResult"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BOOTSTRAP JQUERY-->
+    <script src="./assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
